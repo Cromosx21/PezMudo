@@ -1,5 +1,6 @@
 import React from "react";
 import { Waves, Book, ShieldCheck, FileText, Phone, Mail } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
@@ -14,7 +15,7 @@ export default function Footer() {
         <nav aria-label="Links rápidos">
           <div className="font-bold mb-3">Links rápidos</div>
           <ul className="space-y-2 text-slate-300">
-            <li><a href="/" className="hover:text-white cursor-pointer">Inicio</a></li>
+            <li><Link to="/" className="hover:text-white cursor-pointer">Inicio</Link></li>
             <li><a href="#carta" className="hover:text-white cursor-pointer">Carta</a></li>
             <li><a href="#reservaciones" className="hover:text-white cursor-pointer">Reservas</a></li>
             <li><a href="#ubicacion" className="hover:text-white cursor-pointer">Ubicación</a></li>
@@ -23,9 +24,9 @@ export default function Footer() {
         <nav aria-label="Legal">
           <div className="font-bold mb-3">Legal</div>
           <ul className="space-y-2 text-slate-300">
-            <li><a href="#" className="hover:text-white cursor-pointer"><Book size={16} className="inline mr-2" />Libro de Reclamaciones</a></li>
-            <li><a href="#" className="hover:text-white cursor-pointer"><FileText size={16} className="inline mr-2" />Términos y Condiciones</a></li>
-            <li><a href="#" className="hover:text-white cursor-pointer"><ShieldCheck size={16} className="inline mr-2" />Políticas de Privacidad</a></li>
+            <li><Link to="/libro-de-reclamaciones" className="hover:text-white cursor-pointer"><Book size={16} className="inline mr-2" />Libro de Reclamaciones</Link></li>
+            <li><Link to="/terminos-y-condiciones" className="hover:text-white cursor-pointer"><FileText size={16} className="inline mr-2" />Términos y Condiciones</Link></li>
+            <li><Link to="/politicas-de-privacidad" className="hover:text-white cursor-pointer"><ShieldCheck size={16} className="inline mr-2" />Políticas de Privacidad</Link></li>
           </ul>
         </nav>
         <section aria-label="Contacto">

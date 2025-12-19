@@ -15,7 +15,7 @@ export default function Payment() {
 			const message = `Hola Mar y Fuego, adjunto mi comprobante de pago por S/ ${total}. Mi pedido incluye: ${lines
 				.map((l) => `${l.qty}x ${l.name}`)
 				.join(", ")}`;
-			const url = `https://wa.me/51987654321?text=${encodeURIComponent(
+			const url = `https://wa.me/51969673200?text=${encodeURIComponent(
 				message
 			)}`;
 			window.open(url, "_blank");
@@ -190,14 +190,14 @@ export default function Payment() {
 				</section>
 
 				<div className="mt-8 flex gap-3">
-					<button
-						onClick={handleConfirm}
-						className="bg-green-600 text-white px-6 py-3 rounded-xl font-bold hover:bg-green-700 transition cursor-pointer flex-1"
-					>
-						{method === "qr"
-							? "Enviar Comprobante a WhatsApp"
-							: "Pagar con Izipay"}
-					</button>
+					{method === "qr" && (
+						<button
+							onClick={handleConfirm}
+							className="bg-green-600 text-white px-6 py-3 rounded-xl font-bold hover:bg-green-700 transition cursor-pointer flex-1"
+						>
+							Enviar Comprobante a WhatsApp
+						</button>
+					)}
 					<button
 						onClick={() => navigate(-1)}
 						className="bg-slate-100 text-slate-900 px-6 py-3 rounded-xl font-bold hover:bg-slate-200 transition cursor-pointer"

@@ -9,19 +9,32 @@ import Payment from "./pages/Payment.jsx";
 import ThankYou from "./pages/ThankYou.jsx";
 import CartFab from "./components/CartFab.jsx";
 
+import ClaimsBook from "./pages/ClaimsBook.jsx";
+import Terms from "./pages/Terms.jsx";
+import Privacy from "./pages/Privacy.jsx";
+
 export default function AppLayout() {
-  return (
-    <div className="min-h-screen bg-slate-50">
-      <Navbar />
-      <OrderPanel />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/categoria/:name" element={<CategoryDetailView />} />
-        <Route path="/pago" element={<Payment />} />
-        <Route path="/gracias" element={<ThankYou />} />
-      </Routes>
-      <CartFab />
-      <Footer />
-    </div>
-  );
+	return (
+		<div className="min-h-screen bg-slate-50">
+			<Navbar />
+			<OrderPanel />
+			<Routes>
+				<Route path="/" element={<Home />} />
+				<Route
+					path="/categoria/:name"
+					element={<CategoryDetailView />}
+				/>
+				<Route path="/pago" element={<Payment />} />
+				<Route path="/gracias" element={<ThankYou />} />
+				<Route
+					path="/libro-de-reclamaciones"
+					element={<ClaimsBook />}
+				/>
+				<Route path="/terminos-y-condiciones" element={<Terms />} />
+				<Route path="/politicas-de-privacidad" element={<Privacy />} />
+			</Routes>
+			<CartFab />
+			<Footer />
+		</div>
+	);
 }
